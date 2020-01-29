@@ -3,8 +3,7 @@
 
 
 Marine::Marine()
-{
-	health = 50;
+{	
 }
 
 

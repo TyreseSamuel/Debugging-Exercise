@@ -22,10 +22,23 @@ using std::vector;
 using std::cout;
 using std::endl;
 
+vector<Marine> squad;
+vector<Zergling> swarm;
+
+// Is there a Marine Alive?
+bool marineAlive()
+{
+	return squad.size() > 0;
+}
+
+// Is there a zergling Alive
+bool zerglingAlive(vector<Zergling> swarm)
+{
+	return swarm.size();
+}
+
 int main()
 {
-	vector<Marine> squad;
-	vector<Zergling> swarm;
 
 	int squadSize = 10;
 	int swarmSize = 20;
@@ -44,7 +57,7 @@ int main()
 		swarm.push_back(z);
 	}
 
-	cout << "A squad of marines approaches a swarm of Zerglings and opens fire! The Zerglings charge!" endl;
+	cout << "A squad of marines approaches a swarm of Zerglings and opens fire! The Zerglings charge!" << std::endl;
 	// Attack each other until only one team is left alive
 	while (marineAlive() || zerglingAlive(swarm)) // If anyone is left alive to fight . . .
 	{
@@ -92,14 +105,4 @@ int main()
 	}
 }
 
-// Is there a Marine Alive?
-bool marineAlive()
-{
-	return squad.Size() > 0;
-}
 
-// Is there a zergling Alive
-bool zerglingAlive(vector<Zergling> swarm)
-{
-	return swarm.size();
-}
